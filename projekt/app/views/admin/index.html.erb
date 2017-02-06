@@ -1,0 +1,15 @@
+<h1>Panel administratora</h1>
+
+<ul>
+	<% @orders.each do |item| %>
+	  <li> <%= item.first_name %> <% item.second_name %> <% item.email %> 
+		  <ul>
+		    <% item.lists.each do |classes| %>
+		  	<li>
+		  		<%= classes.lecture.name %>
+		  	</li>
+		  	<% end %>
+		  </ul>
+	  </li>
+	<% end %>
+</ul>

@@ -1,0 +1,42 @@
+
+<!-- /app/views/layouts/application.html.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classes1</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+  <body>
+  			
+		<div id="logo" >
+			Plan Zajęć 
+		</div>
+		<div id="columns" >
+			<div id="menu" >
+			    <ul>
+			    	<li>
+			    		<%= link_to 'Wykaz zajęć', lectures_path  %>
+			    	</li>
+			    	<% if session[:plan_id] %>
+				    	<li>
+				    		<%= link_to 'Moje przedmioty', plan_path(session[:plan_id]) %>
+				    	</li>			    	
+			    	<% end %>
+					<% if session[:user_id] %>
+						<li>
+			          	<%= link_to 'Wyloguj', logout_path, method: :delete  %>
+			          </li>		
+			        <% end %>
+		    	</ul>	  
+			</div>
+			<div id="content" >
+				<% if flash[:notice] %>
+					<p id="notice"><%= flash[:notice] %></p>
+				<% end %>
+				<%= yield %>
+			</div>
+		</div>
+	</body>
+</html>

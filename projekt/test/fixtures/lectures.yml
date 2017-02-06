@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Python
+  short_name: Py
+  etcs_point: 6
+  description: Opis
+
+two:
+  name: Analiza Matematyczna
+  short_name: AM
+  etcs_point: 5
+  description: Opis

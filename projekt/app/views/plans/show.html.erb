@@ -1,0 +1,24 @@
+<h2>Wybrane przedmioty</h2>
+
+<table  class = "lecture">
+    <% @plan.lists.each do |item| %>
+      <tr>
+        <td><%= item.lecture.name %> (<%= item.lecture.short_name %>) </td>
+        <td><%= item.lecture.etcs_point %></td>
+        <td> x <%= item.quantity %></td>
+        <td> = <%= item.total_point%></td>
+        <td><%= link_to 'Usuń', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+	    <tr>
+	        <td></td>
+	        <td></td>
+	        <td> </td>
+	        <td> <b> = <%= @plan.total_point%> </b> </td>
+	        <td></td>
+	      </tr>    
+</table>
+<%= button_to "Zapisz", new_order_path, method: :get %>
+
+
+
